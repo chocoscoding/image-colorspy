@@ -49,7 +49,7 @@ export default function Home() {
       </Head>
 
       <header>
-        <h1>Palette Gen</h1>
+        <h1>Image colorspy</h1>
 
         <div className="input">
           <label htmlFor="file">{gallery} Upload Image</label>
