@@ -24,7 +24,7 @@ function DisplayImage({ uploadedImage, colorPalette }: { uploadedImage: string; 
             alt="uploaded"
           />
         ) : (
-          <h2>Put An Image Here...</h2>
+          <h2>Uploaded image would show here</h2>
         )}
       </div>
 
