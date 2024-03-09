@@ -3,17 +3,19 @@ import styles from "../styles/Home.module.css";
 
 const copy = <i className="far fa-copy"></i>;
 
-function ListItem({ rgb, hex }) {
+function ListItem({ rgb, hex }: { rgb: string; hex: string }) {
   const [copied, setCopied] = useState(false);
 
   // Copy to clipboard
-  const copyToClipboard = (e) => {
-    const color = e.target.innerText;
+  const copyToClipboard = (e: React.MouseEvent<HTMLSpanElement>) => {
+    const color = (e.target as HTMLElement).innerText;
     navigator.clipboard.writeText(color);
   };
 
   return (
-    <li className={styles.colorName} style={{ background: rgb }}>
+    <li
+      className={styles.colorName}
+      style={{ background: rgb }}>
       <span
         onClick={(e) => {
           copyToClipboard(e);
@@ -21,8 +23,7 @@ function ListItem({ rgb, hex }) {
           setTimeout(() => {
             setCopied(false);
           }, 1000);
-        }}
-      >
+        }}>
         {copied ? "Copied!" : hex} {copy}
       </span>
     </li>
